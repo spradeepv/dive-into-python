@@ -1,5 +1,3 @@
-__author__ = 'psathasi'
-
 def get_encrypted_char(k, ascii_val, ascii_list, limit):
     diff = k % 26
     rotate_val = ascii_val + diff
