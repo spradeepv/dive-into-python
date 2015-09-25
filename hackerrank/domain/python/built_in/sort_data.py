@@ -44,3 +44,8 @@ n, m = map(int, raw_input().split())
 l = []
 for i in range(n):
     l.append(map(int, raw_input().split()))
+sort_by = int(raw_input())
+#print i
+l = sorted(l, key=lambda row:row[sort_by])
+for i in l:
+    print " ".join("%s" % num for num in i)
