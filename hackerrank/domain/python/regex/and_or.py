@@ -106,3 +106,11 @@ print set(list(a)) | set(list(b))
 #Only change those '|| which has space on both sides.
 """
 
+import re
+
+n = int(raw_input())
+for i in range(n):
+    s = raw_input()
+    s = re.sub("(?<= )&&(?= )", "and", s)
+    s = re.sub("(?<= )\|\|(?= )", "or", s)
+    print s
