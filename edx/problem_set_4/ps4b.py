@@ -127,9 +127,11 @@ def playGame(wordList):
             if user_or_comp == 'u':
                 hand = dealHand(HAND_SIZE)
                 playHand(hand, wordList, HAND_SIZE)
+                ask_user_input = True
             elif user_or_comp == 'c':
                 hand = dealHand(HAND_SIZE)
                 compPlayHand(hand, wordList, HAND_SIZE)
+                ask_user_input = True
             else:
                 print "Invalid command."
                 ask_user_input = False
