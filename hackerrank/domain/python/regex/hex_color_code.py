@@ -77,24 +77,17 @@ Hence, valid color codes are:
 
 Note: There are no comments ( // or /* */) in CSS Code.
 """
-
 import re
 
-#n = int(raw_input())
-n = 1
-for i in range(n):
-    #s = raw_input()
-    s = "color: #FfFdF8; background-color:#aef;background-color:#cef;#FfFdF8"
-    #s = "background: -webkit-linear-gradient(top, #f9f9f9, #fff);"
-    #s = "#BED"
-    #s = "background-color: #ABC;"
-    #pattern = re.compile('.*?(#([a-fA-F0-9]{3}){1,2}).*?(#([a-fA-F0-9]{3}){1,2}).*?')
-    pattern = re.compile('.*?(#([a-fA-F0-9]{3}){1,2}).*?')
-    #pattern = '([\(\)\w\s:\,])+(#([a-fA-F0-9]{3}){1,2}).*?([\w\s\;-])+:((#([a-fA-F0-9]{3}){1,2}))*'
-    for i in re.finditer(pattern, s):
-        print i.group()
-    matchGrp = pattern.match(s)
-    if matchGrp:
-        print "Matches", matchGrp.group(), len(matchGrp.groups())
-        for i in matchGrp.groups():
-            print i
+inside_css = False
+for _ in range(int(raw_input())):
+    s = raw_input().strip()
+    if not s:
+        pass
+    elif s[-1] == '{':
+        inside_css = True
+    elif s[-1]=='}':
+        inside_css=False
+    elif inside_css:
+        for e in re.finditer(r'#[0-9a-fA-F]+', s):
+            if len(e.group(0))==4 or len(e.group(0))==7: print(e.group(0))
