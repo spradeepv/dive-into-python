@@ -77,6 +77,15 @@ def insert(atMe, newFrob):
                 atMe.before.after = newFrob
             atMe.before = newFrob
 
+def findFront(start):
+    """
+    start: a Frob that is part of a doubly linked list
+    returns: the Frob at the beginning of the linked list
+    """
+    if not start.before:
+        return start
+    return findFront(start.before)
+
 eric = Frob('eric')
 andrew = Frob('andrew')
 ruth = Frob('ruth')
