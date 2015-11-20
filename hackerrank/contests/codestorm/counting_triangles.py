@@ -55,10 +55,10 @@ for tup in list(combinations(A,  3)):
     a = tup[0]
     b = tup[1]
     c = tup[2]
-    #print "".join(str(tup))
+    print "".join(str(tup))
     if a+b <= c or b+c <= a or a+c <= b:
         continue
-    if a**2 + b**2 > c**2 and b**2 + c ** 2 > a**2 and a**2 + c**2 > b**2:
+    elif a**2 + b**2 > c**2 and b**2 + c ** 2 > a**2 and a**2 + c**2 > b**2:
         #print "ACUTE "+"".join(str(tup))
         acute += 1
     elif c == sqrt(a**2 + b**2) or a == sqrt(c**2 + b**2) or b == sqrt(a**2 + c**2):
