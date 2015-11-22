@@ -87,7 +87,7 @@ for a0 in xrange(t):
     in_game = []
     n = N
     while len(players) > 1:
-        print players
+        #print players
         length = len(players)
         if length%2 == 0:
             remove_index = player_index + length/2
@@ -99,7 +99,8 @@ for a0 in xrange(t):
                     remove_index = remove_index % length
             print "---------", player_index, remove_index
             players.pop(remove_index)
-            if remove_index != 0 and player_index + 1 < len(players):
+            #if remove_index != 0 and player_index + 1 <= len(players):
+            if remove_index != 0:
                 player_index += 1
         else:
             print "********",player_index, length

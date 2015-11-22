@@ -2,7 +2,8 @@
 Task
 
 You are given a string S.
-Your task is to print all possible combinations upto size k, of the string in lexicographic sorted order.
+Your task is to print all possible combinations upto size k, of the string in
+lexicographic sorted order.
 
 Input Format
 
