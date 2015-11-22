@@ -63,12 +63,13 @@ for i in range(6):
 print ">>>>", l[5][2]
 for i in range(0, 4):
     for j in range(i, i+3):
-        for k in range(0, 3):
-            print l[j][k],
-        print
+        for m in range(0, 3):
+            for k in range(m, m+3):
+                print l[j][k],
+            print
     print
-    for j in range(i, i+3):
-        for k in range(1, 4):
-            print l[j][k],
-        print
-    print
+    # for j in range(i, i+3):
+    #     for k in range(1, 4):
+    #         print l[j][k],
+    #     print
+    # print
