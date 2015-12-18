@@ -2,5 +2,6 @@
 
 """
 
-for i in range(1,int(raw_input())+1):
-    print "".join(map(str, [x if x<=i else x-i for x in range(1, i + (i-1)+1)]))
+for i in range(1, int(raw_input()) + 1):
+    print reduce(lambda a, b: a * 10 + b,
+                 map(lambda x: x if x < i else 2 * i - x, range(1, 2 * i)))
