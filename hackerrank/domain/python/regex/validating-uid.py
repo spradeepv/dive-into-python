@@ -40,14 +40,23 @@ B1CDEF2354: Valid
 """
 import re
 
-invalid_pattern = "([A-Za-z0-9])\1*"
-#pattern = "^([A-Za-z0-9])(?!\1*)[a-zA-Z0-9]{0,8}[a-zA-Z0-9]"
-pattern = "^(?=[A-Z]{2, })(?=\d{3, }){10}$"
+#match_upper_case = r"([A-Z].*?)"
+
+invalid_pattern = r"([a-zA-Z0-9])[a-zA-Z0-9]*\1"
+upper_case_match = r"([A-Z].*?)"
+digit_pattern = r"([0-9].*?)"
+length_pattern = r"([A-Za-z0-9]){10}"
 for _ in range(int(raw_input())):
     s = raw_input()
-    if re.match(invalid_pattern, s):
-        print "Invalid", re.match(invalid_pattern, s).groups()
-    elif re.match(pattern, s):
+    invalid_match = re.search(invalid_pattern, s)
+    length_match = re.match(length_pattern, s)
+    if invalid_match or not length_match:
+        print "Invalid"
+        continue
+    match_upper_case = re.findall(upper_case_match, s)
+    match_digit = re.findall(digit_pattern, s)
+    print len(match_upper_case), len(match_digit), length_match
+    if length_match and len(match_upper_case) >= 2 and len(match_digit) >= 3:
         print "Valid"
-
-
+    else:
+        print "Invalid"
