@@ -13,8 +13,8 @@ The first line of input contains an integer, N. The next N lines each
 contain an above mentioned query. (It is guaranteed that each query is valid.)
 
 Constraints
-1<=N<=105
-1<=x<=109
+1<=N<=10^5
+1<=x<=10^9
 1<=type<=3
 Output Format
 
