@@ -63,7 +63,9 @@ For test cases 2: There are only one edge (2, 3) in a graph with 3 nodes,
 so node 1 is unreachable from node 2, and node 3 has one edge from node 2,
 each edge has the length of 6 units. So we output -1 6.
 """
+import requests
 
+requests.request()
 
 class Graph(object):
     """
