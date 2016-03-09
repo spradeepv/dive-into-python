@@ -40,21 +40,17 @@ second element of the array
 """
 import numpy as np
 
-def accumu(lis):
-    total = 0
-    for x in lis:
-        total += x
-        yield total
+def prefix_array(arr, n, m):
+    curr = 0
+    prefix = [0] * n
+    for i in range(n):
+        curr = (arr[i] % m + curr) % m
+        prefix[i] = curr
+    return prefix
 
 for _ in range(int(raw_input())):
     n, m = map(int, raw_input().split())
     #print m
     l = map(long, raw_input().split())
-    li = []
-    for i in range(n):
-        li.extend(list(accumu(l[i:])))
-        #li.extend(list(np.cumsum(l[i:])))
-    #print li
-    final_list = [x%m for x in li]
-    #print final_list
-    print max(final_list)
+    prefix = prefix_array(l, n, m)
+    print prefix

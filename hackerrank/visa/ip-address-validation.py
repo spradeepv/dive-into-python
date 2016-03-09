@@ -15,9 +15,9 @@ for _ in range(int(raw_input())):
             continue
     else:
         ipv6 = s.split(":")
-        pattern = r"^[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]$"
         is_valid = True
         if len(ipv6) == 8:
+            pattern = r"^[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]$"
             for addr in ipv6:
                 if len(addr) < 4:
                     for i in range(4 - len(addr)):
