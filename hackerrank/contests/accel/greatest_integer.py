@@ -68,14 +68,11 @@ you can easily find MMthth greatest integer as asked in the question.
 
 On the side note, you might as well like to read Euclidean Theroem.
 """
-
-
 def gcd(a, b):
     if b == 0:
         return a
     else:
         return gcd(b, a % b)
-
 
 N = int(raw_input())
 s = map(int, raw_input().split())
@@ -85,15 +82,9 @@ m = s[N - 1]
 g = gcd(s[0], s[1])
 for i in range(2, N - 1):
     g = gcd(g, s[i])
-k = 1
-
-#print g
 if g == 1:
     s_ = [x for x in range(1, m+1)]
 else:
-    num = k * g
     s_ = set([x * g for x in range(m+1) if x*g <= m])
-#print s_
 s_ = sorted(s_, reverse=True)
-#print s_
 print s_[M - 1]

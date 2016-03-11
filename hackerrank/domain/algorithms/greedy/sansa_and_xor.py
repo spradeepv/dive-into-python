@@ -7,8 +7,8 @@ Note : [5,7,5][5,7,5] is contiguous subarray of [4,5,7,5][4,5,7,5] while [4,
 7,5][4,7,5] is not.
 
 Input Format
-First line contains an integer TT, number of the test cases.
-The first line of each test case contains an integer NN, number of elements
+First line contains an integer T, number of the test cases.
+The first line of each test case contains an integer N, number of elements
 in the array.
 The second line of each test case contains NN integers that are elements of
 the array.
@@ -35,26 +35,33 @@ Sample Output
 Explanation
 
 Test case #00:
-1 XOR 2 XOR 3 XOR (1 XOR 2) XOR (2 XOR 3) XOR (1 XOR 2 XOR 3)=21 XOR 2 XOR 3
-XOR (1 XOR 2) XOR (2 XOR 3) XOR (1 XOR 2 XOR 3)=2
+1 XOR 2 XOR 3 XOR (1 XOR 2) XOR (2 XOR 3) XOR (1 XOR 2 XOR 3)=2
+1 2 3 (1 3) (3 2) (1 3 2)
 
 Test case #01:
 4 XOR 5 XOR 7 XOR 5 XOR (4 XOR 5) XOR (5 XOR 7) XOR (7 XOR 5) XOR (4 XOR 5
 XOR 7) XOR (5 XOR 7 XOR 5) XOR (4 XOR 5 XOR 7 XOR 5)=0
+
+Editorial
+---------
+As we know "a XOR a" =0 So, When we write all substrings, We have to
+check how many numbers are coming even number of time and how many numbers
+coming odd number of times. So, If the list is 0 indexed. i.e. numbers are
+indexed as "012.....N-1" Number at "ith" index will come "(i+1)*(N-i)"
+number of times.
+
+So, if "N" is even, either "i+1" or "N-i" will be even,
+So each number will come even number of times. So, answer will be "0".
+If "N" is odd, and "i" is even number, the give product will be
+odd. So, answer will be XOR of even indexed numbers.
 """
-
-def get_sub_array(lst   ):
-    result = []
-    start = 0
-    while start < len(lst):
-        try:
-            end = lst.index(item, start + 1)
-        except ValueError:
-            end = len(lst)
-        result.extend(lst[x+start:x+start+size] for x in range(end - start - size + 1))
-        start = end + 1
-
 for _ in range(int(raw_input())):
     n = int(raw_input())
     l = map(int, raw_input().split())
-
+    if n % 2 == 0:
+        print 0
+    else:
+        ans = 0
+        for i in range(0, n + 1, 2):
+            ans ^= l[i]
+        print ans
