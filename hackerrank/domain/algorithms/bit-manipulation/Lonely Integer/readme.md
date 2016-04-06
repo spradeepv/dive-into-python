@@ -9,7 +9,9 @@ The first line of the input contains an integer N, indicating the number of inte
 Constraints
 ------------
 1≤N<100
+
 N % 2=1 (N is an odd number)
+
 0≤A[i]≤100,∀i∈[1,N]
 
 Output Format
@@ -19,6 +21,7 @@ Output SS, the number that occurs only once.
 Sample Input:1
 --------------
 1
+
 1
 
 Sample Output:1
@@ -28,6 +31,7 @@ Sample Output:1
 Sample Input:2
 ---------------
 3
+
 1 1 2
 
 Sample Output:2
@@ -37,6 +41,7 @@ Sample Output:2
 Sample Input:3
 ---------------
 5
+
 0 0 1 2 1
 
 Sample Output:3

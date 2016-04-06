@@ -9,6 +9,7 @@ The first line of the input contains the list size TT, which is followed by TT l
 Constraints
 -----------
 1≤T≤100
+
 0≤integer<232
 
 Output Format
@@ -18,14 +19,19 @@ Output one line per element from the list with the requested result.
 Sample Input
 ------------
 3
+
 2147483647
+
 1
+
 0
 
 Sample Output
 -------------
 2147483648
+
 4294967294
+
 4294967295
 
 Explanation

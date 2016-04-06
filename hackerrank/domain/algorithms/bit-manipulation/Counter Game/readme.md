@@ -19,6 +19,7 @@ T lines follow. Each line contains N, the initial number set in the counter.
 Constraints
 -----------
 1 ≤ T ≤ 10
+
 1 ≤ N ≤ 264 - 1
 
 Note: Range of N is larger than long long int, consider using unsigned long long int.
@@ -30,6 +31,7 @@ For each test case, print the winner's name in a new line. So if Louise wins the
 Sample Input
 ------------
 1
+
 6
 
 Sample Output

@@ -16,21 +16,28 @@ Print the answer corresponding to each test case in a separate line.
 
 Constraints
 -----------
-1≤T≤51≤T≤5
-2≤N≤1052≤N≤105
-1≤numbers in array≤1081≤numbers in array≤108
+1≤T≤5
+
+2≤N≤10^5
+
+1≤numbers in array≤108
 
 Sample Input
 ------------
 2
+
 3
+
 1 2 3
+
 4
+
 4 5 7 5
 
 Sample Output
 -------------
 2
+
 0
 
 Explanation
