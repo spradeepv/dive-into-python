@@ -34,7 +34,9 @@ For each test case, print its XorSum % (109+7)XorSum % (109+7) on a new line; th
 Sample Input
 ------------
 1
+
 3
+
 1 2 3
 
 Sample Output
