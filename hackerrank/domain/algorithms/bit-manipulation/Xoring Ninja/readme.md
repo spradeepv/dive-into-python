@@ -1,3 +1,6 @@
+Xoring Ninja
+------------
+
 An XOR operation on a list is defined here as the xor (⊕) of all its elements (e.g.: XOR({A,B,C})=A⊕B⊕C).
 
 The XorSum of set S is defined here as the sum of the XORs of all S's non-empty subsets. If we refer to the set of S's non-empty subsets as S′, this can be expressed as:
