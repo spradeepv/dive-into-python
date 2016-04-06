@@ -19,7 +19,7 @@ Note: The cardinality of powerset(n)(n) is 2n2n, so the set of non-empty subsets
 Input Format
 ------------
 The first line contains an integer, TT, denoting the number of test cases.
-Each test case consists of two lines; the first is an integer, nn, describing the size of the set, and the second contains nn space-separated integers (a1,a2,…,ana1,a2,…,an) describing the set.
+Each test case consists of two lines; the first is an integer, nn, describing the size of the set, and the second contains nn space-separated integers (a1,a2,…,an) describing the set.
 
 Constraints
 -----------
