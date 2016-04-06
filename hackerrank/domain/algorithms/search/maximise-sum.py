@@ -38,66 +38,29 @@ Explanation
 Max Possible Sum taking Modulo 7 is 6 , and we can get 6 by adding first and
 second element of the array
 """
-import numpy as np
+import bisect
 
-def prefix_array(arr, n, m):
-    curr = 0
-    prefix = [0] * n
-    for i in range(n):
-        curr = (arr[i] % m + curr) % m
-        prefix[i] = curr
-    return prefix
+def max_mod(array, n, m):
+    L = [0] * (n + 1)
+    for i in range(1, n+1):
+        L[i] = L[i - 1] + array[i - 1]
+    #print L
+    acc = 0
+    done = []
+    for i in range(n+1):
+        x = L[i] % m
+        j = bisect.bisect_right(done, x)
+        acc = max(acc, x)
+        # print done, (x, j), acc
+        if j < i:
+            acc = max(acc, (L[i] - done[j]) % m)
+        done.insert(j, x)
+    return acc
 
-def max_sum_array(a, size, m):
-    max_so_far =a[0]
-    curr_max = a[0]
-
-    for i in range(1,size):
-        curr_max = max(a[i], (curr_max + a[i]))
-        max_so_far = max(max_so_far,curr_max)
-    return max_so_far
-
-def maxSubArray(ls):
-    if len(ls) == 0:
-       raise Exception("Array empty") # should be non-empty
-
-    runSum = maxSum = ls[0]
-    i = 0
-    start = finish = 0
-
-    for j in range(1, len(ls)):
-        if ls[j] > (runSum + ls[j]):
-            runSum = ls[j]
-            i = j
-        else:
-            runSum += ls[j]
-
-        if runSum > maxSum:
-            maxSum = runSum
-            start = i
-            finish = j
-    print "maxSum =>", maxSum
-    print "start =>", start, "; finish =>", finish
-    return maxSum
 
 for _ in range(int(raw_input())):
     n, m = map(int, raw_input().split())
-    #print m
     b = [0] * (n + 1)
     l = map(long, raw_input().split())
-    prefix = prefix_array(l, n, m)
-    print prefix
-    sorted_prefix = sorted(prefix)
-    indices = sorted(range(len(prefix)), key=lambda k: prefix[k])
-    print sorted_prefix
-    print indices
-    mini = 1000000
-    for i in range(len(sorted_prefix)):
-        if i+1 < n and indices[i] > indices[i + 1] and \
-            sorted_prefix[i+1] - sorted_prefix[i] < mini and \
-            sorted_prefix[i+1] - sorted_prefix[i] != 0:
-            mini = sorted_prefix[i+1] - sorted_prefix[i]
-    print mini
-    print m - mini
-    #print max_sum_array(l, n, m)
-    #print maxSubArray(l) % 7
+    print max_mod(l, n, m)
+
