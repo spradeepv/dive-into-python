@@ -20,7 +20,9 @@ Constraints
 -----------
 
 1 <= N <= 10^6
+
 0 <= K <= 10^9
+
 0 <= Ai <= 10^6
 
 Output Format
@@ -31,6 +33,7 @@ Output the number of operations that are needed to increase the cookie's sweetne
 Sample Input
 ------------
 6 7
+
 1 2 3 9 10 12
 
 Sample Output
